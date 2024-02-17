@@ -376,4 +376,22 @@ return [
         */
         'force_resync_remote' => null,
     ],
+
+    /*
+     |--------------------------------------------------------------------------
+     | Macro naming
+     |--------------------------------------------------------------------------
+     |
+     | This package leverages Laravel's Builder capability with macros, and it is
+     | possible for the provided macros to silently shadow your application
+     | Model methods.  To avoid this shadowing of application methods, rename
+     | the macros as needed here.
+     |
+     */
+    'macro_names' => [
+        'download_excel' => 'downloadExcel',
+        'import'         => 'import',
+        'import_as'      => 'importAs',
+        'store_excel'    => 'storeExcel',
+    ],
 ];

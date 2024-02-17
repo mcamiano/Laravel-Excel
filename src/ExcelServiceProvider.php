@@ -105,10 +105,10 @@ class ExcelServiceProvider extends ServiceProvider
 
         Collection::mixin(new DownloadCollectionMixin);
         Collection::mixin(new StoreCollectionMixin);
-        Builder::macro('downloadExcel', (new DownloadQueryMacro)());
-        Builder::macro('storeExcel', (new StoreQueryMacro())());
-        Builder::macro('import', (new ImportMacro())());
-        Builder::macro('importAs', (new ImportAsMacro())());
+        Builder::macro(config('excel.macro_names.download_excel'), (new DownloadQueryMacro)());
+        Builder::macro(config('excel.macro_names.store_excel'), (new StoreQueryMacro())());
+        Builder::macro(config('excel.macro_names.import'), (new ImportMacro())());
+        Builder::macro(config('excel.macro_names.import_as'), (new ImportAsMacro())());
 
         $this->commands([
             ExportMakeCommand::class,
